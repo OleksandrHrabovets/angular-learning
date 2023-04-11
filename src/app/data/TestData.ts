@@ -1,6 +1,6 @@
 import {Category} from "../model/Category";
 import {Priority} from "../model/Priority";
-import { Task } from "../model/Task";
+import {Task} from "../model/Task";
 
 export class TestData {
   static categories: Category[] = [
@@ -17,7 +17,13 @@ export class TestData {
   ]
 
   static tasks: Task[] = [
-    {id: 1, title: 'Buy products', status: false, category: TestData.categories[0], priority: TestData.priorities[0]},
+    {
+      id: 1,
+      title: 'Buy products',
+      status: true,
+      category: TestData.categories[0],
+      priority: TestData.priorities[0]
+    },
     {id: 2, title: 'Buy clothes', status: false},
     {id: 3, title: 'Buy services', status: false},
     {id: 4, title: 'Journey', status: false},
