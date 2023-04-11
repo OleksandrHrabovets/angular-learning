@@ -11,7 +11,7 @@ export class TestData {
   ]
 
   static priorities: Priority[] = [
-    {id: 1, title: 'Hight', color: 'red'},
+    {id: 1, title: 'High', color: 'red'},
     {id: 2, title: 'Medium', color: 'blue'},
     {id: 3, title: 'Low', color: 'green'},
   ]
