@@ -16,9 +16,12 @@
       <tr *ngFor="let task of tasks; let i = index" [class.completed]="task.status">
         <td>{{i + 1}}</td>
         <td>{{task.title}}</td>
-        <td>{{task.category != null ? task.category.title : 'empty'}}</td>
-        <td>{{task.priority != null ? task.priority.title : 'empty'}}</td>
-        <td>{{task.date != null ? (task.date | date) : 'empty'}}</td>
+        <td [class.empty-value]="!task.category">{{task.category != null ? task.category.title
+          : 'empty'}}</td>
+        <td [class.empty-value]="!task.priority">{{task.priority != null ? task.priority.title
+          : 'empty'}}</td>
+        <td [class.empty-value]="!task.date">{{task.date != null ? (task.date | date)
+          : 'empty'}}</td>
         <td>
           <div class="form-check">
             <label class="form-check-label">
