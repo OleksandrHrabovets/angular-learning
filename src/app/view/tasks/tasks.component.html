@@ -1,4 +1,4 @@
-<div class="card">
+<div *ngIf="tasks && tasks.length > 0" class="card">
   <div class="card-header card-header-warning">
     <h4 class="card-title">List of tasks</h4>
   </div>
@@ -18,7 +18,7 @@
         <td>{{task.title}}</td>
         <td>{{task.category != null ? task.category.title : 'empty'}}</td>
         <td>{{task.priority != null ? task.priority.title : 'empty'}}</td>
-        <td>{{task.date != null ? task.date : 'empty'}}</td>
+        <td>{{task.date != null ? (task.date | date) : 'empty'}}</td>
         <td>
           <div class="form-check">
             <label class="form-check-label">
@@ -35,4 +35,7 @@
       </tbody>
     </table>
   </div>
+</div>
+<div *ngIf="tasks && tasks.length == 0">
+  <b>There are no tasks!</b>
 </div>

@@ -24,10 +24,36 @@ export class TestData {
       category: TestData.categories[0],
       priority: TestData.priorities[0]
     },
-    {id: 2, title: 'Buy clothes', status: false},
-    {id: 3, title: 'Buy services', status: false},
-    {id: 4, title: 'Journey', status: false},
-    {id: 5, title: 'Buy gas', status: false},
+    {
+      id: 2,
+      title: 'Buy clothes',
+      status: false,
+      category: TestData.categories[0],
+      priority: TestData.priorities[1]
+    },
+    {
+      id: 3,
+      title: 'Buy services',
+      status: false,
+      category: TestData.categories[2],
+      priority: TestData.priorities[2]
+
+    },
+    {
+      id: 4,
+      title: 'Journey',
+      status: false,
+      category: TestData.categories[3],
+      priority: TestData.priorities[2],
+      date: new Date('2023-07-01')
+    },
+
+    {
+      id: 5,
+      title: 'Buy gas',
+      status: false,
+      category: TestData.categories[2]
+    }
   ]
 
 }

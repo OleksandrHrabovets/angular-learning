@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Task} from 'src/app/model/Task';
-import {DataHandlerService} from "../../service/data-handler.service";
 
 @Component({
   selector: 'app-tasks',
@@ -8,13 +7,14 @@ import {DataHandlerService} from "../../service/data-handler.service";
   styleUrls: ['./tasks.component.css']
 })
 export class TasksComponent implements OnInit {
+  @Input()
   tasks: Task[] = [];
 
-  constructor(private dataHandlerService: DataHandlerService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.dataHandlerService.tasksSubject.subscribe(tasks => this.tasks = tasks);
+    // this.dataHandlerService.tasksSubject.subscribe(tasks => this.tasks = tasks);
   }
 
   toggleStatus(task: Task) {
