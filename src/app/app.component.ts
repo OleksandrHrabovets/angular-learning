@@ -12,12 +12,24 @@ export class AppComponent implements OnInit {
   title = 'my-app';
   tasks: Task[] = [];
   categories: Category[] = [];
+  selectedCategory!: Category;
 
   constructor(private dataHandlerService: DataHandlerService) {
   }
 
   ngOnInit(): void {
-    this.dataHandlerService.getCategories().subscribe(categories => this.categories = categories);
-    this.dataHandlerService.getTasks().subscribe(tasks => this.tasks = tasks);
+    this.dataHandlerService.getCategories().subscribe(
+      categories => this.categories = categories
+    );
+    this.dataHandlerService.getTasks().subscribe(
+      tasks => this.tasks = tasks
+    );
+  }
+
+  onSelectCategory(category: Category) {
+    this.selectedCategory = category;
+    this.dataHandlerService.getTasksByCategory(this.selectedCategory).subscribe(
+      tasks => this.tasks = tasks
+    );
   }
 }
